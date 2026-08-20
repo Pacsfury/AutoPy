@@ -1,0 +1,9 @@
+{
+    "compiler": "python",
+    "flags": [
+        "-u"
+    ],
+    "input": "TEST.py",
+    "output": "",
+    "outputSymbol": ""
+}
