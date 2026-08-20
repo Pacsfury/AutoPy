@@ -14,13 +14,38 @@ With AutoPy, you can automize jobs through a JSON. These jobs are executing some
 Example for executing a Python file:
 ```json
 {
-    "compiler": "python",    // What compiler?
-    "flags": [               // What flags?
-        "-u"
-    ],
-    "input": "TEST.py",      // What file(s)?
-    "output": "",            // How will be the output named?
-    "outputSymbol": ""       // How does your compiler mark the output? (-o, /Fe:, etc)
+    "jobs": [
+        /* 
+        Every job includes some basic fields:
+        */
+        {
+            "compiler": "python",
+            "flags": [
+                "-u"
+            ],
+            "input": "TEST1.py",
+            "output": "",
+            "outputSymbol": ""
+        },
+        {
+            "compiler": "python",
+            "flags": [
+                "-u"
+            ],
+            "input": "TEST2.py",
+            "output": "",
+            "outputSymbol": ""
+        },
+        {
+            "compiler": "gcc",
+            "flags": [
+                "-Wall"
+            ],
+            "input": "src/*.c",
+            "output": "result",
+            "outputSymbol": "-o "
+        }
+    ]
 }
 ```
 

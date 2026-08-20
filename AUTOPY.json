@@ -1,9 +1,31 @@
 {
-    "compiler": "python",
-    "flags": [
-        "-u"
-    ],
-    "input": "TEST.py",
-    "output": "",
-    "outputSymbol": ""
+    "jobs": [
+        {
+            "compiler": "python",
+            "flags": [
+                "-u"
+            ],
+            "input": "TEST1.py",
+            "output": "",
+            "outputSymbol": ""
+        },
+        {
+            "compiler": "python",
+            "flags": [
+                "-u"
+            ],
+            "input": "TEST2.py",
+            "output": "",
+            "outputSymbol": ""
+        },
+        {
+            "compiler": "gcc",
+            "flags": [
+                "-Wall"
+            ],
+            "input": "src/*.c",
+            "output": "result",
+            "outputSymbol": "-o "
+        }
+    ]
 }

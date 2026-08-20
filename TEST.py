@@ -1,1 +1,0 @@
-print("Calling from AUTOPY")

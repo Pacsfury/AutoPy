@@ -1,13 +1,20 @@
 import json
+import main
+
+def process_job(job):
+    global COMPILER, FLAGS, OUTPUT, OUTPUTCMD, INPUT
+    COMPILER = job.get("compiler")
+    FLAGS = job.get("flags")
+    OUTPUT = job.get("output")
+    OUTPUTCMD = job.get("outputSymbol", "") + OUTPUT
+    INPUT = job.get("input")
+
+    main.runConfig()
+    
 
 with open('AUTOPY.json', 'r', encoding='utf-8') as config:
     data = json.load(config)
 
-def getPropierty(name):
-    return data[name]
-
-COMPILER = getPropierty("compiler")
-FLAGS = getPropierty("flags")
-OUTPUT = getPropierty("output")
-OUTPUTCMP = getPropierty("outputSymbol") + OUTPUT
-INPUT = getPropierty("input")
+jobs = data.get("jobs", [])
+for job in jobs:
+    process_job(job)
