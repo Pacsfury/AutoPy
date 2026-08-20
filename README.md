@@ -12,6 +12,7 @@ With AutoPy, you can automize jobs through a JSON. These jobs are executing some
 ## How to use it
 
 Example for executing a Python file:
+`AUTOPY.json`
 ```json
 {
     "jobs": [
