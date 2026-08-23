@@ -2,6 +2,7 @@
     "jobs": [
         {
             "compiler": "python",
+            "id": "test1",
             "flags": [
                 "-u"
             ],
@@ -11,6 +12,7 @@
         },
         {
             "compiler": "python",
+            "id": "test2",
             "flags": [
                 "-u"
             ],
@@ -20,6 +22,7 @@
         },
         {
             "compiler": "gcc",
+            "id": "gcc",
             "flags": [
                 "-Wall"
             ],

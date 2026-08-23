@@ -17,11 +17,9 @@ Example for executing a Python file:
 ```json
 {
     "jobs": [
-        /* 
-        Every job includes some basic fields:
-        */
         {
             "compiler": "python",
+            "id": "test1", // Optional: use the id as argument to call only this
             "flags": [
                 "-u"
             ],
@@ -31,6 +29,7 @@ Example for executing a Python file:
         },
         {
             "compiler": "python",
+            "id": "test2",
             "flags": [
                 "-u"
             ],
@@ -40,6 +39,7 @@ Example for executing a Python file:
         },
         {
             "compiler": "gcc",
+            "id": "gcc",
             "flags": [
                 "-Wall"
             ],

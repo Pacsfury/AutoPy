@@ -1,5 +1,6 @@
 import json
 import main
+import sys
 
 def process_job(job):
     global COMPILER, FLAGS, OUTPUT, OUTPUTCMD, INPUT
@@ -16,5 +17,10 @@ with open('AUTOPY.json', 'r', encoding='utf-8') as config:
     data = json.load(config)
 
 jobs = data.get("jobs", [])
-for job in jobs:
-    process_job(job)
+if len(sys.argv) == 1:
+    for job in jobs:
+        process_job(job)
+else:
+    for job in jobs:
+        if job.get("id") == sys.argv[1]:
+            process_job(job)
