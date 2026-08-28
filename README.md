@@ -19,7 +19,7 @@ Example for executing a Python file:
     "jobs": [
         {
             "compiler": "python",
-            "id": "test1", // Optional: use the id as argument to call only this
+            "id": "test1",
             "flags": [
                 "-u"
             ],
@@ -50,5 +50,12 @@ Example for executing a Python file:
     ]
 }
 ```
+
+## Fields
+**compiler**: what tool to use   _string_
+**id**: used when only want to execute one (`autopy id`) _string_
+**flags**: flags for the compiler _string[array]_
+**output**: how the output file will be named _string_
+**outputSymbol**: how that compiler handles output _string_
 
 > AutoPy is in process: major features and improvements are coming soon
