@@ -6,10 +6,18 @@ import configreader as cr
 
 
 def runConfig():
-    cmd = [str(cr.COMPILER).strip()]
+    components = [str(cr.COMPILER).strip()]
+    
     if cr.FLAGS:
-        cmd.extend(cr.FLAGS)
-    cmd.extend([str(cr.INPUT).strip(), str(cr.OUTPUTCMD).strip()])
+        components.extend([str(flag).strip() for flag in cr.FLAGS])
+        
+    if cr.INPUT:
+        components.append(str(cr.INPUT).strip())
+        
+    if cr.OUTPUTCMD:
+        components.append(str(cr.OUTPUTCMD).strip())
+
+    cmd = [arg for arg in components if arg]
 
     result = subprocess.run(
         cmd,
